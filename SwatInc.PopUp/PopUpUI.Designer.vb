@@ -27,7 +27,7 @@ Partial Class PopUpUI
         '
         'PictureBoxPopUpIcon
         '
-        Me.PictureBoxPopUpIcon.Image = Global.SwatInc.PopUp.My.Resources.Resources.HealthForms
+        Me.PictureBoxPopUpIcon.Image = Global.SwatInc.PopUp.My.Resources.Resources.RecordsAdded
         Me.PictureBoxPopUpIcon.Location = New System.Drawing.Point(12, 0)
         Me.PictureBoxPopUpIcon.Name = "PictureBoxPopUpIcon"
         Me.PictureBoxPopUpIcon.Size = New System.Drawing.Size(96, 96)
@@ -89,7 +89,7 @@ Partial Class PopUpUI
         Me.Name = "PopUpUI"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.Text = "PopUpUI"
+        Me.Text = "PopUpUI Title"
         CType(Me.PictureBoxPopUpIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
