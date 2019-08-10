@@ -1,7 +1,8 @@
 ﻿Imports System.ComponentModel
+Imports Notify
 
 Public Class PopUpUI
-
+    Implements INotify
 #Region "initializations"
     Dim WithEvents AnimationControl As New Timer   'TO CONTROL THE WAY NOTIFICATION SHOWS UP.
     Dim i As Integer = 0                            'COUNTER FOR LOOP USED FOR NOTIFICATION SHOW UP ANIMATION.
@@ -48,8 +49,7 @@ Public Class PopUpUI
         Me.Text = e.Title
         LabelControlMessage.Text = e.Message
         LabelControlHeading.Text = e.Heading
-
-        ' NotificationIcon.Image = Image.FromFile(GetImagePath(e.PngIconName))
+        PictureBoxPopUpIcon.Image = Image.FromFile(GetImagePath(e.PngIconName))
 
 
         Location = NotificationLocation     'SETTING INITIAL LOCATION OF NOTIFICATION FORM.
@@ -106,10 +106,6 @@ Public Class PopUpUI
         My.Computer.Audio.PlaySystemSound(Media.SystemSounds.Exclamation)
     End Sub
 
-    Private Sub PictureBoxPopUpIcon_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBoxPopUpIcon.MouseClick
-        'Coding to test the notification system.
-    End Sub
-
     Private Sub RegisterNotification(ByVal IsLoading As Boolean)
 
         'THIS SUB STILL HAVE SOME BUGS TO FIX. ADD COMMENTS
@@ -162,15 +158,11 @@ Public Class PopUpUI
         'ALL IMAGES ARE STORED IN A SINGLE DIRECTORY REFFERED TO AS "ImagerRootDir". THE PROVIDED "ImageName As String" IS CONCENCATED AS "ImagePath As String" AND RETURNED.
 
         Dim ImagerRootDir As String = My.Settings.ImageRootDir
-        Dim ImagePath As String = String.Format("{0}{1}.PNG", ImagerRootDir, ImageName)
-
-        Return ImagePath
+        Dim ImagePath As String = ($"{Application.StartupPath}\Resources\{ImageName}.png")
+        Return ImagePath.ToString
     End Function
 
-    Private Sub NotificationInfocus() Handles PictureBoxPopUpIcon.MouseEnter,
-        Me.MouseEnter,
-        LabelControlHeading.MouseEnter,
-        LabelControlMessage.MouseEnter
+    Private Sub NotificationInfocus() Handles LabelControlMessage.MouseEnter
         'IF THE CURSOR ENTERS THE UI OF THE NOTIFICATION. THE FADING OUT OF THE NOTIFICATION STOPS.
         'TRANSPARENCY OF THE FORM IS MADE OPAQUE TOO.
         LifeTime.Enabled = False
@@ -182,5 +174,22 @@ Public Class PopUpUI
     Private Sub Notification_LostFocus() Handles Me.MouseLeave
         'ON MOUSE LEAVE. THE FADING OUT OF THE NOTIFICATION WILL START.
         LifeTime.Enabled = True
+    End Sub
+
+    Private Sub PictureBoxPopUpIcon_Click(sender As Object, e As EventArgs) Handles PictureBoxPopUpIcon.Click
+
+        Dim a As New PopUpUI
+        a.ShowNotification(Me, New PopUpEventArgs With {.Heading = "Testing",
+                         .Title = "Test PopUp!",
+                         .PngIconRefName = IconName.Patient,
+                         .Message = $"This is a test message. {AlreadyActiveNotificationsNO}"})
+    End Sub
+
+    Public Async Sub InitializePopUps(sender As Object, e As EventArgs) Implements INotify.InitializePopUps
+        BackgroundWorkerPopUpDriver.RunWorkerAsync()
+    End Sub
+
+    Private Sub BackgroundWorkerPopUpDriver_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorkerPopUpDriver.DoWork
+
     End Sub
 End Class

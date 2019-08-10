@@ -170,5 +170,11 @@
   <ItemGroup>
     <None Include="Resources\SwatIncNinja.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ibrahimhuycn\SwatIncLabs\INotify\Notify.vbproj">
+      <Project>{93f1e139-457d-4189-be18-8625f9d44741}</Project>
+      <Name>Notify</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

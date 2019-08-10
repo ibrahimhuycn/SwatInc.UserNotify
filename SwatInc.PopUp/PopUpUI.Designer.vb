@@ -22,6 +22,7 @@ Partial Class PopUpUI
         Me.PictureBoxPopUpIcon = New System.Windows.Forms.PictureBox()
         Me.LabelControlHeading = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControlMessage = New DevExpress.XtraEditors.LabelControl()
+        Me.BackgroundWorkerPopUpDriver = New System.ComponentModel.BackgroundWorker()
         CType(Me.PictureBoxPopUpIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -71,15 +72,18 @@ Partial Class PopUpUI
         Me.LabelControlMessage.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftTop
         Me.LabelControlMessage.Location = New System.Drawing.Point(122, 29)
         Me.LabelControlMessage.Name = "LabelControlMessage"
-        Me.LabelControlMessage.Size = New System.Drawing.Size(343, 67)
+        Me.LabelControlMessage.Size = New System.Drawing.Size(282, 67)
         Me.LabelControlMessage.TabIndex = 2
         Me.LabelControlMessage.Text = "Message displayed on PopUpUI"
+        '
+        'BackgroundWorkerPopUpDriver
+        '
         '
         'PopUpUI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(477, 100)
+        Me.ClientSize = New System.Drawing.Size(416, 100)
         Me.Controls.Add(Me.LabelControlMessage)
         Me.Controls.Add(Me.LabelControlHeading)
         Me.Controls.Add(Me.PictureBoxPopUpIcon)
@@ -99,4 +103,5 @@ Partial Class PopUpUI
     Friend WithEvents PictureBoxPopUpIcon As PictureBox
     Friend WithEvents LabelControlHeading As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControlMessage As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents BackgroundWorkerPopUpDriver As System.ComponentModel.BackgroundWorker
 End Class
