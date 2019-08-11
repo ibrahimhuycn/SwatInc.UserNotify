@@ -176,14 +176,14 @@ Public Class PopUpUI
         LifeTime.Enabled = True
     End Sub
 
-    Private Sub PictureBoxPopUpIcon_Click(sender As Object, e As EventArgs) Handles PictureBoxPopUpIcon.Click
+    'Private Sub PictureBoxPopUpIcon_Click(sender As Object, e As EventArgs) Handles PictureBoxPopUpIcon.Click
 
-        Dim a As New PopUpUI
-        a.ShowNotification(Me, New PopUpEventArgs With {.Heading = "Testing",
-                         .Title = "Test PopUp!",
-                         .PngIconRefName = IconName.Patient,
-                         .Message = $"This is a test message. {AlreadyActiveNotificationsNO}"})
-    End Sub
+    '    Dim a As New PopUpUI
+    '    a.ShowNotification(Me, New PopUpEventArgs With {.Heading = "Testing",
+    '                     .Title = "Test PopUp!",
+    '                     .PngIconRefName = IconName.Patient,
+    '                     .Message = $"This is a test message. {AlreadyActiveNotificationsNO}"})
+    'End Sub
 
     Public Sub InitializePopUps(sender As Object, e As EventArgs) Implements INotify.InitializePopUps
         BackgroundWorkerPopUpDriver.RunWorkerAsync(e)
