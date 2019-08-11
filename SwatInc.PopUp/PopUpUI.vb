@@ -185,11 +185,13 @@ Public Class PopUpUI
                          .Message = $"This is a test message. {AlreadyActiveNotificationsNO}"})
     End Sub
 
-    Public Async Sub InitializePopUps(sender As Object, e As EventArgs) Implements INotify.InitializePopUps
-        BackgroundWorkerPopUpDriver.RunWorkerAsync()
+    Public Sub InitializePopUps(sender As Object, e As EventArgs) Implements INotify.InitializePopUps
+        BackgroundWorkerPopUpDriver.RunWorkerAsync(e)
     End Sub
 
-    Private Sub BackgroundWorkerPopUpDriver_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorkerPopUpDriver.DoWork
-
+    Private Sub BackgroundWorkerPopUpDriver_DoWork(sender As Object, e As Object) Handles BackgroundWorkerPopUpDriver.DoWork
+        Dim PopUpArgs As PopUpEventArgs = e
+        Dim PopUp As New PopUpUI
+        PopUp.ShowNotification(Me, PopUpArgs)
     End Sub
 End Class
