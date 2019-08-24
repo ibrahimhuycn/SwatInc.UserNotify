@@ -37,6 +37,7 @@ Public Class PopUpUI
     End Sub
 
     Public Sub ShowNotification(ByVal sender As Object, ByVal f As EventArgs)
+        Me.Hide()
         RegisterNotification(True)
 
         ScreenDiametions(POINT_X, POINT_Y)
@@ -51,7 +52,7 @@ Public Class PopUpUI
         LabelControlHeading.Text = e.Heading
         PictureBoxPopUpIcon.Image = Image.FromFile(GetImagePath(e.PngIconName))
 
-
+        Me.StartPosition = FormStartPosition.Manual
         Location = NotificationLocation     'SETTING INITIAL LOCATION OF NOTIFICATION FORM.
 
         If AnimationControl Is Nothing Then
@@ -68,7 +69,6 @@ Public Class PopUpUI
         AnimationControl.Start()
 
         Show()
-
     End Sub
 
 
@@ -186,12 +186,16 @@ Public Class PopUpUI
     'End Sub
 
     Public Sub InitializePopUps(sender As Object, e As EventArgs) Implements INotify.InitializePopUps
-        BackgroundWorkerPopUpDriver.RunWorkerAsync(e)
+        Dim PopUpArgs As PopUpEventArgs = e
+        Dim PopUp As New PopUpUI With {.Visible = False}
+        PopUp.ShowNotification(Me, PopUpArgs)
     End Sub
 
     Private Sub BackgroundWorkerPopUpDriver_DoWork(sender As Object, e As Object) Handles BackgroundWorkerPopUpDriver.DoWork
-        Dim PopUpArgs As PopUpEventArgs = e
+        Dim PopUpArgs As DoWorkEventArgs = e
+
         Dim PopUp As New PopUpUI
-        PopUp.ShowNotification(Me, PopUpArgs)
+        PopUp.ShowNotification(Me, PopUpArgs.Argument)
+
     End Sub
 End Class

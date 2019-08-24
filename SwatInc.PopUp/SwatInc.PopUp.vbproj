@@ -11,9 +11,10 @@
     <AssemblyName>SwatInc.PopUp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -171,7 +172,7 @@
     <None Include="Resources\SwatIncNinja.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ibrahimhuycn\SwatIncLabs\INotify\Notify.vbproj">
+    <ProjectReference Include="..\..\INotify\Notify.vbproj">
       <Project>{93f1e139-457d-4189-be18-8625f9d44741}</Project>
       <Name>Notify</Name>
     </ProjectReference>

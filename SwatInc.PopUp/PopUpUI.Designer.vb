@@ -29,30 +29,38 @@ Partial Class PopUpUI
         'PictureBoxPopUpIcon
         '
         Me.PictureBoxPopUpIcon.Image = Global.SwatInc.PopUp.My.Resources.Resources.RecordsAdded
-        Me.PictureBoxPopUpIcon.Location = New System.Drawing.Point(12, 0)
+        Me.PictureBoxPopUpIcon.Location = New System.Drawing.Point(10, 0)
         Me.PictureBoxPopUpIcon.Name = "PictureBoxPopUpIcon"
-        Me.PictureBoxPopUpIcon.Size = New System.Drawing.Size(96, 96)
+        Me.PictureBoxPopUpIcon.Size = New System.Drawing.Size(82, 83)
         Me.PictureBoxPopUpIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBoxPopUpIcon.TabIndex = 0
         Me.PictureBoxPopUpIcon.TabStop = False
         '
         'LabelControlHeading
         '
-        Me.LabelControlHeading.Appearance.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControlHeading.Appearance.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControlHeading.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold
         Me.LabelControlHeading.Appearance.Options.UseFont = True
-        Me.LabelControlHeading.AppearanceDisabled.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelControlHeading.Appearance.Options.UseTextOptions = True
+        Me.LabelControlHeading.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.LabelControlHeading.AppearanceDisabled.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Bold)
         Me.LabelControlHeading.AppearanceDisabled.FontStyleDelta = System.Drawing.FontStyle.Bold
         Me.LabelControlHeading.AppearanceDisabled.Options.UseFont = True
-        Me.LabelControlHeading.AppearanceHovered.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelControlHeading.AppearanceDisabled.Options.UseTextOptions = True
+        Me.LabelControlHeading.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.LabelControlHeading.AppearanceHovered.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Bold)
         Me.LabelControlHeading.AppearanceHovered.FontStyleDelta = System.Drawing.FontStyle.Bold
         Me.LabelControlHeading.AppearanceHovered.Options.UseFont = True
-        Me.LabelControlHeading.AppearancePressed.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelControlHeading.AppearanceHovered.Options.UseTextOptions = True
+        Me.LabelControlHeading.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.LabelControlHeading.AppearancePressed.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Bold)
         Me.LabelControlHeading.AppearancePressed.FontStyleDelta = System.Drawing.FontStyle.Bold
         Me.LabelControlHeading.AppearancePressed.Options.UseFont = True
-        Me.LabelControlHeading.Location = New System.Drawing.Point(122, 0)
+        Me.LabelControlHeading.AppearancePressed.Options.UseTextOptions = True
+        Me.LabelControlHeading.AppearancePressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.LabelControlHeading.Location = New System.Drawing.Point(105, 0)
         Me.LabelControlHeading.Name = "LabelControlHeading"
-        Me.LabelControlHeading.Size = New System.Drawing.Size(60, 23)
+        Me.LabelControlHeading.Size = New System.Drawing.Size(50, 19)
         Me.LabelControlHeading.TabIndex = 1
         Me.LabelControlHeading.Text = "Heading"
         '
@@ -62,17 +70,21 @@ Partial Class PopUpUI
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControlMessage.Appearance.Options.UseTextOptions = True
         Me.LabelControlMessage.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top
+        Me.LabelControlMessage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControlMessage.AppearanceDisabled.Options.UseTextOptions = True
         Me.LabelControlMessage.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top
+        Me.LabelControlMessage.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControlMessage.AppearanceHovered.Options.UseTextOptions = True
         Me.LabelControlMessage.AppearanceHovered.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top
+        Me.LabelControlMessage.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControlMessage.AppearancePressed.Options.UseTextOptions = True
         Me.LabelControlMessage.AppearancePressed.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top
+        Me.LabelControlMessage.AppearancePressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControlMessage.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControlMessage.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftTop
-        Me.LabelControlMessage.Location = New System.Drawing.Point(122, 29)
+        Me.LabelControlMessage.Location = New System.Drawing.Point(105, 25)
         Me.LabelControlMessage.Name = "LabelControlMessage"
-        Me.LabelControlMessage.Size = New System.Drawing.Size(282, 67)
+        Me.LabelControlMessage.Size = New System.Drawing.Size(321, 58)
         Me.LabelControlMessage.TabIndex = 2
         Me.LabelControlMessage.Text = "Message displayed on PopUpUI"
         '
@@ -81,13 +93,12 @@ Partial Class PopUpUI
         '
         'PopUpUI
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(416, 100)
+        Me.ClientSize = New System.Drawing.Size(436, 92)
         Me.Controls.Add(Me.LabelControlMessage)
         Me.Controls.Add(Me.LabelControlHeading)
         Me.Controls.Add(Me.PictureBoxPopUpIcon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "PopUpUI"
